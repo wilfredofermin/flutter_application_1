@@ -48,9 +48,11 @@ class MyApp extends StatelessWidget {
               ]),
 
               Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 // mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: 50,
