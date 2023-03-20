@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -24,7 +23,7 @@ class MyhomePage extends StatefulWidget {
 class _MyhomePageState extends State<MyhomePage> {
   String name = "Lucas";
 
-  bool switcher_value = false;
+  bool switcher = false;
 
   double progressIndicator = 0.1;
 
@@ -42,16 +41,7 @@ class _MyhomePageState extends State<MyhomePage> {
               LinearProgressIndicator(
                 value: progressIndicator,
               ),
-              Switch(
-                  value: switcher_value,
-                  onChanged: (value) {
-                    setState(() {
-                      switcher_value = value;
-                      if (kDebugMode) {
-                        print(switcher_value);
-                      }
-                    });
-                  })
+              Switch(value: switcher, onChanged: _switch)
             ],
           ),
         ),
@@ -84,6 +74,12 @@ class _MyhomePageState extends State<MyhomePage> {
         name = "Lucas";
       }
       progressIndicator += 0.01;
+    });
+  }
+
+  void _switch(bool value) {
+    setState(() {
+      switcher = !switcher;
     });
   }
 }
